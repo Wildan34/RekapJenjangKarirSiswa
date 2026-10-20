@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('siswa_id')->constrained()->onDelete('cascade');
             $table->string('tahun_ajaran');
             $table->unique(['siswa_id', 'tahun_ajaran']);
-            $table->enum('jenis',['kuliah','bekerja','wirausaha'])->default('kuliah');
+            $table->enum('jenis', ['kuliah', 'bekerja', 'wirausaha'])->default('kuliah');
             $table->string('kampus')->nullable();
             $table->string('jurusan')->nullable();
             $table->string('perusahaan')->nullable();

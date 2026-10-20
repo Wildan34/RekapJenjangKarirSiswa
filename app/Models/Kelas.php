@@ -8,12 +8,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Kelas extends Model
 {
     protected $table = 'kelas';
+
     protected $fillable = [
         'tingkat',
         'nama',
     ];
 
-
+    /**
+     * @return HasMany<SiswaKelas, $this>
+     */
     public function SiswaKelas(): HasMany
     {
         return $this->hasMany(SiswaKelas::class);

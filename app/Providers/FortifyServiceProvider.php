@@ -31,6 +31,9 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        // Authentication is handled by the custom controllers in routes/auth.php.
+        Fortify::ignoreRoutes();
+
         $this->app->singleton(LoginResponseContract::class, LoginResponse::class);
         $this->app->singleton(PasskeyLoginResponseContract::class, PasskeyLoginResponse::class);
         $this->app->singleton(RegisterResponseContract::class, RegisterResponse::class);
