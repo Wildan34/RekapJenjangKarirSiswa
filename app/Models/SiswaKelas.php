@@ -8,17 +8,25 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class SiswaKelas extends Model
 {
     protected $table = 'siswa_kelas';
+
     protected $fillable = [
         'siswa_id',
         'kelas_id',
         'tahun_ajaran',
     ];
 
+    /**
+     * @return BelongsTo<Siswa, $this>
+     */
     public function Siswa(): BelongsTo
     {
         return $this->belongsTo(Siswa::class);
     }
-    public function Kelas(): BelongsTo 
+
+    /**
+     * @return BelongsTo<Kelas, $this>
+     */
+    public function Kelas(): BelongsTo
     {
         return $this->belongsTo(Kelas::class);
     }

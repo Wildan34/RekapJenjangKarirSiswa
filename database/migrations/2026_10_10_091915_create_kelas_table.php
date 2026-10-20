@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
-            $table->enum('tingkat', ['10', '11', '12',])->default('10');
+            $table->enum('tingkat', ['10', '11', '12'])->default('10');
             $table->string('nama')->unique();
             $table->timestamps();
         });
